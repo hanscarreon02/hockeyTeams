@@ -1,0 +1,38 @@
+#container{
+    margin-top: 4em;
+}
+.title{
+    font-family: "bebas nue";
+}
+.article-title{
+    font-family: "bebas nue";
+    font-size: 15px;
+}
+.pd-10{
+    padding: 10px;
+}
+.article-subtitle{
+    font-size: 10px;
+}
+.elips-3{
+overflow: hidden;
+text-overflow: ellipsis;
+line-clamp: 3;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+}
+.elips-1{
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+line-clamp: 1;
+}
+.pd-none{
+padding: 0!important;
+}
+.m-none{
+    margin: 0!important
+}

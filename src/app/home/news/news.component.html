@@ -1,0 +1,24 @@
+
+<ion-content>
+    <h1> Content</h1>
+    <div slot="fixed">
+      <h1>Fixed Content</h1>
+    </div>
+        <div class="text-center">
+            <h1 class="title">{{ newsDatas.header }}</h1>
+        </div>
+        <div class="row">
+            <div *ngFor="let news of newsDatas.articles index as i" class="col-md-6 col-6">
+                <ion-card>
+                    <img class="hero-img" src="{{ news.images[0].url}}" />
+                    <ion-card-header class="pd-10">
+                      <ion-card-subtitle class="article-subtitle elips-1"><ion-icon name="camera-outline"></ion-icon> {{ news.images[0].credit | titlecase}}</ion-card-subtitle>
+                      <ion-card-title class="article-title elips-3">{{ news.headline}} </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <button type="button" [routerLink]="['news/viewn/' ++i]"  class="btn btn-outline-dark btn-sm">Read more</button>
+                    </ion-card-content>
+                  </ion-card>
+            </div>
+        </div>
+</ion-content>
