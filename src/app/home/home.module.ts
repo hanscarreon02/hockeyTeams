@@ -1,3 +1,5 @@
+import { ViewnComponent } from './viewn/viewn.component';
+import { ViewtComponent } from './viewt/viewt.component';
 import { ScoresComponent } from './scores/scores.component';
 import { TeamsComponent } from './teams/teams.component';
 import { NewsComponent } from './news/news.component';
@@ -24,7 +26,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     HeaderComponent,
     NewsComponent,
     TeamsComponent,
-    ScoresComponent
+    ScoresComponent,
+    ViewtComponent,
+    ViewnComponent
   ]
 })
 export class HomePageModule {}

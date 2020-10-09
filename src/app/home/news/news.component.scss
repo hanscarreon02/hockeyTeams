@@ -3,10 +3,20 @@
 }
 .title{
     font-family: "bebas nue";
+    color: #f1ec40;
+    text-shadow: 0 0 10px black;
+    font-size: 3.5em;
+    margin: 0;
 }
 .article-title{
     font-family: "bebas nue";
     font-size: 15px;
+}
+.dd-border-black{
+    border: double 5px #f1ec40;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    background: #00000025;
 }
 .pd-10{
     padding: 10px;
@@ -34,3 +44,25 @@
     height: 120px!important;
     width: 100%!important;
 }
+.gd-ice{
+    background: radial-gradient(circle, rgba(255,255,255,1) 35%, rgb(169 181 203) 100%);
+}
+
+@media only screen and (max-width:360px){
+    .hero-img{
+        height: 100px!important;
+        width: 100%!important;
+    }
+}
+
+@media only screen and (max-width:320px){
+    .hero-img{
+        height: 90px!important;
+        width: 100%!important;
+    }
+}
+
+ion-content{
+    --background: url("../../../assets/bg/ice2.jpeg");
+}
+  

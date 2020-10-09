@@ -1,3 +1,116 @@
-<p>
-  viewn works!
-</p>
+
+  
+<ion-content>
+ 
+    
+  <div>
+    <div id="dataview" *ngIf="id && detailsData && loadData">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+         <ion-card class="ion-padding">
+          <ion-text class="ion-text-center" color="dark">
+            <h1 class="main-title"> {{detailsData.headline}}</h1>
+          </ion-text>
+         </ion-card>
+        </ion-col>
+          <ion-col size="12">
+  
+          <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+            (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+            <ion-slide *ngFor="let s of detailsData.images">
+              <img src="{{s.url}}">
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+        <ion-col size="12">
+            <ion-card class="ion-padding">
+              <div *ngIf="newsFromLinks">
+                <div *ngFor="let data of newsFromLinks" [innerHTML]="data.story" >
+                  {{ data.story}}
+                </div>
+              </div>
+            </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+    <!-- /. DISPLAY DATA  -->
+
+    <div *ngIf="!id && !detailsData">
+          <div class="ion-padding custom-skeleton">
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            <ion-skeleton-text animated></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </div>
+      </div>
+  </div>
+
+  <div *ngIf="!loadData" id="loader" class="ion-padding custom-skeleton">
+    <ion-card class="ion-padding">
+    <div class="group">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+    <br>
+    <div class="group">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+    <br>
+    <div class="group">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+    <br>
+    <div class="group">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+    <br>
+    <div class="group">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+    <br>
+    <div class="group">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+    <br>
+    <div class="group">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+    <br>
+  </ion-card>
+  </div>
+<!-- /. Skeleton screen -->
+
+
+
+
+</ion-content>

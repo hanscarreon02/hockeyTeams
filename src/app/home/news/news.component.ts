@@ -1,6 +1,7 @@
 import { DataApiService } from './../../data-api.service';
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news',
@@ -11,7 +12,9 @@ export class NewsComponent implements OnInit {
 newsDatas = [];
   constructor(
     private apiData: DataApiService,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private router: Router,
+    private  nav : NavController
   ) { }
 
   ngOnInit() {
@@ -21,13 +24,13 @@ newsDatas = [];
   }
 
   readNewsData(){
-    console.log("test")
+    // console.log("test")
    this.apiData.getNews().subscribe((data)=> {
      this.newsDatas = data;
      if(data){
       setTimeout(()=> { this.hideLoader()},1000)
      }
-     console.log(data.articles);
+    //  console.log(data.articles);
    })
   }
 
@@ -41,7 +44,7 @@ newsDatas = [];
       res.present();
 
       res.onDidDismiss().then((dis) => {
-        console.log('Loading dismissed! after 2 Seconds', dis);
+        // console.log('Loading dismissed! after 2 Seconds', dis);
       });
     });
 
@@ -62,9 +65,13 @@ newsDatas = [];
   hideLoader() {
 
     this.loadingController.dismiss().then((res) => {
-      console.log('Loading dismissed!', res);
+      // console.log('Loading dismissed!', res);
     }).catch((error) => {
       console.log('error', error);
     });
+  }
+  routeViewT(id){
+    // this.router.navigate(["home/news/viewn/",id])
+    this.nav.navigateForward(["home/news/viewn/",id])
   }
 }

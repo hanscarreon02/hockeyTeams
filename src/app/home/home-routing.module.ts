@@ -1,3 +1,4 @@
+import { ViewtComponent } from './viewt/viewt.component';
 import { ViewnComponent } from './viewn/viewn.component';
 import { ScoresComponent } from './scores/scores.component';
 import { NewsComponent } from './news/news.component';
@@ -31,11 +32,13 @@ const routes: Routes = [
       {
         path: 'news/viewn/:id',
         component: ViewnComponent,
+        pathMatch: 'full'
+
       }
       ,
       {
-        path: 'news/viewt',
-        component: ViewnComponent,
+        path: 'teams/viewt/:id',
+        component: ViewtComponent,
       }
     ]
   }

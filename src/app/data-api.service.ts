@@ -4,10 +4,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataApiService {
-
+public teamsData ;
   constructor(
     private http: HttpClient
-  ) { }
+  ) { 
+    this.passTeamsData();
+  }
 
   getNews(){
     return this.http.get<any>('http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news')
@@ -17,5 +19,10 @@ export class DataApiService {
   }
   getScores(){
     return this.http.get<any>('http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard')
+  }
+
+  passTeamsData(){
+    return this.http.get<any>('http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams')
+    .subscribe((data)=>  {  this.teamsData = data});
   }
 }

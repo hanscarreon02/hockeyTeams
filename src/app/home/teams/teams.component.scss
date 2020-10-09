@@ -36,3 +36,26 @@ padding: 0!important;
 .m-none{
     margin: 0!important
 }
+ion-content{
+    --background: url("../../../assets/bg/ice2.jpeg");
+}
+.bd-r{
+    border-right: 2px solid black;
+    margin: 0 15px;
+    padding: 0 10px;
+}
+.bookmark{
+    padding: 0;
+    background-color: #bd2130;
+    width: 30px;
+    height: 90px;
+    position: absolute;
+    top: -25px;
+    z-index: 1;
+    right: 25px;
+    display: inherit;
+    border-radius: 0px 0px 25px 25px;
+    justify-content: center;
+    box-shadow: 5px 5px 9px 0px grey;
+    overflow: visible;
+}

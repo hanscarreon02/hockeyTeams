@@ -1,3 +1,81 @@
-<p>
-  viewt works!
-</p>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+
+
+
+
+
+  
+  <!-- team data -->
+  <div id="data-holder" *ngIf="isLoading == true">
+    <ion-grid >
+        <ion-row>
+          <ion-col size="12">
+              <img src="{{ dataTeam[0].team.logos[0].href  }}"> 
+          </ion-col>
+          <ion-col size="12" class="text-center">
+                <h1 class="title  mt-0">{{ dataTeam[0].team.displayName }} </h1>
+          </ion-col>
+          <ion-col class="12">
+             <div class="table-container">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td class="text-center "><h3>Record</h3></td>
+                      <td  class="text-center"><h3>{{ dataTeam[0].team.record.items[0].summary }}</h3></td>
+                    </tr>
+                    <tr *ngFor="let stat of  dataTeam[0].team.record.items[0].stats ">
+                      <td class="text-center ">{{ stat.name }}</td>
+                      <td class="text-center">{{ stat.value }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- ./ table -->
+             </div>
+          </ion-col>
+        </ion-row>
+
+    </ion-grid>
+    
+  </div>
+<!-- 
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered" >
+        <tbody>
+          <tr>
+            <td class="text-center "><h3>Record</h3></td>
+            <td  class="text-center"><h3>{{ dataTeam[0].team.record.items[0].summary }}</h3></td>
+          </tr>
+          <tr *ngFor="let stat of  dataTeam[0].team.record.items[0].stats ">
+            <td class="text-center "><h3>{{ stat.name }}</h3></td>
+            <td class="text-center"><h3>{{ stat.value }}</h3></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+
+  <!-- <ion-col size="1">
+    <span class="slider-nav arrow-prev" (click)="slidePrev(sliderTwo,slideWithNav2)">
+      <div class="prev-icon-custom custon-nav" [class.disabled]="sliderTwo.isBeginningSlide"></div>
+    </span>
+  </ion-col>
+  <ion-col size="10">
+
+    <ion-slides pager="false" [options]="slideOptsTwo" #slideWithNav2
+      (ionSlideDidChange)="SlideDidChange(sliderTwo,slideWithNav2)">
+      <ion-slide *ngFor="let s of dataTeam[0].team.logos; index as i">
+      <img style="border: solid 1px #{{  dataTeam[0].team.color }}" src="{{s.href}}">
+      </ion-slide>
+    </ion-slides>
+
+  </ion-col>
+  <ion-col size="1">
+    <span class="slider-nav arrow-next" (click)="slideNext(sliderTwo,slideWithNav2)">
+      <div class="next-icon-custom custon-nav" [class.disabled]="sliderTwo.isEndSlide"></div>
+    </span>
+  </ion-col> -->
+
+</ion-content>
