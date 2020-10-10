@@ -1,6 +1,7 @@
 import { DataApiService } from './../../data-api.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-teams',
@@ -16,12 +17,18 @@ isLoading = false;
 });
   constructor(
     private apiData: DataApiService,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private location: Location
+
   ) { }
 
   ngOnInit() {
     this.showLoader()
     this.getTeams();
+  }
+
+  backClicked() {
+    this.location.back()
   }
 
   getTeams(){

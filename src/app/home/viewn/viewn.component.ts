@@ -6,6 +6,8 @@ import { IonSlides } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { HomePage } from '../home.page';
 
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-viewn',
   templateUrl: './viewn.component.html',
@@ -32,7 +34,8 @@ newsFromLinks;
   constructor(
     public activatedRoute: ActivatedRoute,
     private apiData: DataApiService,
-    private http: HttpClient
+    private http: HttpClient,
+    private location: Location
     ) { }
 
   ngOnInit() {
@@ -48,6 +51,10 @@ newsFromLinks;
         this.getApiNews();
        }
     },3000)
+  }
+
+  backClicked() {
+    this.location.back()
   }
   async trnasferData(){
    this.activatedRoute.params.subscribe((data) => {

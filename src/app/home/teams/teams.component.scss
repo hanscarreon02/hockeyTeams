@@ -46,7 +46,6 @@ ion-content{
 }
 .bookmark{
     padding: 0;
-    background-color: #bd2130;
     width: 30px;
     height: 90px;
     position: absolute;
@@ -59,3 +58,15 @@ ion-content{
     box-shadow: 5px 5px 9px 0px grey;
     overflow: visible;
 }
+
+.gd-ice{
+    background: radial-gradient(circle, rgba(255,255,255,1) 35%, rgb(169 181 203) 100%);
+}
+.table-bordered th, .table-bordered td {
+    border: 1px solid #000000;
+}
+
+.btncolor {
+    --background: #f2ec40;
+    --color: black;
+  }

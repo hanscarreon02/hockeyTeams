@@ -15,7 +15,15 @@
               <img src="{{ dataTeam[0].team.logos[0].href  }}"> 
           </ion-col>
           <ion-col size="12" class="text-center">
-                <h1 class="title  mt-0">{{ dataTeam[0].team.displayName }} </h1>
+                  <h1 style="
+                    border: 6px double #{{ dataTeam[0].team.alternateColor }}; 
+                    color:#{{ dataTeam[0].team.color }};
+                    border-radius: 10px;
+                    box-shadow: 0 0 5px black;
+                    background: #00000025;
+                    font-size: 3em;
+                    " 
+                    class="team-border title mb-0 mt-0">{{ dataTeam[0].team.displayName }} </h1>
           </ion-col>
           <ion-col class="12">
              <div class="table-container">
@@ -80,13 +88,13 @@
 
 </ion-content>
 
-<ion-footer color="dark">
+<ion-footer >
   <ion-toolbar>
-    <ion-grid>
+    <ion-grid class="bg-dark">
       <ion-row>
         <ion-col></ion-col>
         <ion-col size="6" class="text-center">
-          <ion-button [routerLink]="['/home/teams']" color="warning">
+          <ion-button (click)="backClicked()" class="btncolor">
             <ion-icon slot="icon-only"name="arrow-undo-outline"></ion-icon>
           </ion-button>
         </ion-col>

@@ -115,14 +115,14 @@
 
 </ion-content>
 
-<ion-footer>
+<ion-footer >
   <ion-toolbar>
-    <ion-grid>
+    <ion-grid class="bg-dark">
       <ion-row>
         <ion-col></ion-col>
         <ion-col size="6" class="text-center">
-          <ion-button [routerLink]="['/home']" color="secondary">
-            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          <ion-button (click)="backClicked()" class="btncolor">
+            <ion-icon slot="icon-only"name="arrow-undo-outline"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col></ion-col>

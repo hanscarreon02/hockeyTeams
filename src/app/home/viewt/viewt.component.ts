@@ -2,6 +2,7 @@ import { DataApiService } from './../../data-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { IonSlides, LoadingController } from '@ionic/angular';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-viewt',
   templateUrl: './viewt.component.html',
@@ -24,7 +25,8 @@ isLoading = false;
   constructor(
     public activatedRoute: ActivatedRoute,
     private apiData: DataApiService,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private location: Location
   ) {
 
 
@@ -75,6 +77,9 @@ isLoading = false;
     this.readData();
 
 
+  }
+  backClicked() {
+    this.location.back()
   }
 
   readData(){

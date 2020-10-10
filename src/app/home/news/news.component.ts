@@ -2,6 +2,7 @@ import { DataApiService } from './../../data-api.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-news',
@@ -14,13 +15,20 @@ newsDatas = [];
     private apiData: DataApiService,
     public loadingController: LoadingController,
     private router: Router,
-    private  nav : NavController
+    private  nav : NavController,
+    private location: Location
+
   ) { }
 
   ngOnInit() {
 
     this.showLoader()
     this.readNewsData();
+  }
+
+
+  backClicked() {
+    this.location.back()
   }
 
   readNewsData(){
