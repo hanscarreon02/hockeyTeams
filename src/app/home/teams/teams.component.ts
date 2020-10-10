@@ -28,13 +28,14 @@ isLoading = false;
     this.apiData.getTeams().subscribe((data)=>{
       this.teams =  data.sports[0].leagues[0].teams 
       console.log(this.teams);
+      console.log(data); // check data in console
       if(data){
-        setTimeout(()=> { this.hideLoader()},1000)
-      }
+        setTimeout(()=> { this.hideLoader()},1000) // delayed loader hider
+      }// if data exist hide the loader
 
     })
-  }
-  // This will show then autohide the loader
+  }// read data of api
+  
   showHideAutoLoader() {
 
     this.loadingController.create({
@@ -48,9 +49,8 @@ isLoading = false;
       });
     });
 
-  }
+  } // show loader
 
-  // Show the loader for infinite time
   showLoader() {
 
     this.loadingController.create({
@@ -60,8 +60,8 @@ isLoading = false;
     });
 
   }
+  // Show the loader for infinite time
 
-  // Hide the loader if already created otherwise return error
   hideLoader() {
 
     this.loadingController.dismiss().then((res) => {
@@ -69,8 +69,8 @@ isLoading = false;
     }).catch((error) => {
       console.log('error', error);
     });
-
   }
+  // Hide the loader if already created otherwise return error
 
 
 

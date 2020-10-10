@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { HomePageModule } from './home/home.module';
 import { NewsComponent } from './home/news/news.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from "@angular/common";
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { CommonModule } from "@angular/common";
     IonicModule.forRoot(), 
     AppRoutingModule, 
     NgbModule,
-    HttpClientModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,

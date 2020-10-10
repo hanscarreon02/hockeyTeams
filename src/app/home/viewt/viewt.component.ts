@@ -8,7 +8,7 @@ import { IonSlides, LoadingController } from '@ionic/angular';
   styleUrls: ['./viewt.component.scss'],
 })
 export class ViewtComponent implements OnInit {
-  sliderTwo: any;
+sliderTwo: any;
 dataTeam;
 teamId;
 isLoading = false;
@@ -78,12 +78,13 @@ isLoading = false;
   }
 
   readData(){
-    this.activatedRoute.params.subscribe((data) => {
-      this.teamId = data.id;
-      console.log(data.id);
+    this.activatedRoute.params.subscribe((params) => {
+      this.teamId = params.id;
+      console.log(params.id);
     })
     this.apiData.getTeams().subscribe((data)=>{
       this.dataTeam = data.sports[0].leagues[0].teams.filter((arr)=>{
+
           return arr.team.id == this.teamId.toString();
       });
     });
