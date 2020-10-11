@@ -1,3 +1,5 @@
+import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { BackComponent } from './back/back.component';
 import { ViewnComponent } from './viewn/viewn.component';
 import { ViewtComponent } from './viewt/viewt.component';
 import { ScoresComponent } from './scores/scores.component';
@@ -28,7 +30,10 @@ import { HomePageRoutingModule } from './home-routing.module';
     TeamsComponent,
     ScoresComponent,
     ViewtComponent,
-    ViewnComponent
+    ViewnComponent,
+    BackComponent,
+    SubHeaderComponent
+    
   ]
 })
 export class HomePageModule {}
