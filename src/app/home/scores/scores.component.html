@@ -1,8 +1,107 @@
 
-<ion-content>
- 
-      <div class="text-center">
-          <h1 class="title">Score Board</h1>
-      </div>
-    
+<ion-content  class="ion-padding" >
+  <div *ngIf="isLoading == true">
+    <ion-card class="gd-ice" >
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12" class="text-center">
+                    <h5>{{  matchResult[0].name }}</h5>
+                </ion-col>
+                  <ion-col size="5">
+                    <img class="team-logo" src="{{ matchResult[0].competitions[0].competitors[0].team.logo }}">
+                    <h5>{{ matchResult[0].competitions[0].competitors[0].team.displayName }}</h5>
+                  </ion-col>
+                  <ion-col size="2" class="text-center"> 
+                   <h5 class="mt-5">vs</h5>
+                  </ion-col>
+                  <ion-col size="5" class="text-right">
+                    <img class="team-logo" src="{{ matchResult[0].competitions[0].competitors[1].team.logo }}">
+                    <h5>{{ matchResult[0].competitions[0].competitors[0].team.displayName }}</h5>
+                  </ion-col>
+                  <ion-col size="12" class="">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr>
+                          <td  class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[0].records[1].summary  }}</h5></td>
+                          <td class="text-center "><h5>Standing (home)</h5></td>
+                          <td class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[1].records[1].summary  }}</h5></td>
+                        </tr>
+                        <tr>
+                          <td  class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[0].records[2].summary  }}</h5></td>
+                          <td class="text-center "><h5>Standing (away)</h5></td>
+                          <td class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[1].records[2].summary  }}</h5></td>
+                        </tr>
+                        <tr>
+                          <td  class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[0].records[0].summary  }}</h5></td>
+                          <td class="text-center "><h5>Standing (total)</h5></td>
+                          <td class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[1].records[0].summary  }}</h5></td>
+                        </tr>
+                     
+                        <tr>
+                          <td  class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[0].score  }}</h5></td>
+                          <td class="text-center "><h5>Score</h5></td>
+                          <td class="text-center"><h5>{{ matchResult[0].competitions[0].competitors[1].score  }}</h5></td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" class="text-center "><h5>NBC</h5></td>
+                        </tr>
+                        <tr>
+                          <td  class="text-center"><h5> {{ matchResult[0].competitions[0].competitors[0].linescores[0].value   }}</h5></td>
+                          <td class="text-center "><h5>1</h5></td>
+                          <td class="text-center"><h5> {{ matchResult[0].competitions[0].competitors[1].linescores[0].value   }} </h5></td>
+                        </tr>
+                        <tr>
+                          <td  class="text-center"><h5> {{ matchResult[0].competitions[0].competitors[0].linescores[1].value   }}</h5></td>
+                          <td class="text-center "><h5>2</h5></td>
+                          <td class="text-center"><h5> {{ matchResult[0].competitions[0].competitors[1].linescores[1].value   }} </h5></td>
+                        </tr>
+                        <tr>
+                          <td  class="text-center"><h5> {{ matchResult[0].competitions[0].competitors[0].linescores[2].value   }}</h5></td>
+                          <td class="text-center "><h5>3</h5></td>
+                          <td class="text-center"><h5> {{ matchResult[0].competitions[0].competitors[1].linescores[2].value   }} </h5></td>
+                        </tr>
+                        <tr>
+                          <td  class="text-center">
+                            <h5> 
+                            {{ matchResult[0].competitions[0].competitors[0].linescores[0].value  + matchResult[0].competitions[0].competitors[0].linescores[1].value + matchResult[0].competitions[0].competitors[0].linescores[2].value  }}
+                             </h5></td>
+                          <td class="text-center "><h5>Total</h5></td>
+                          <td class="text-center">
+                            <h5> {{ matchResult[0].competitions[0].competitors[1].linescores[0].value +matchResult[0].competitions[0].competitors[1].linescores[1].value + matchResult[0].competitions[0].competitors[1].linescores[2].value  }} 
+
+                            </h5></td>
+                        </tr>
+                        
+                     
+                      </tbody>
+                    </table>
+                    <!-- ./ table -->
+                    <h5></h5>
+                  </ion-col>
+                  <ion-col size="2" class="text-center"> 
+                   </ion-col>
+                  <ion-col size="5" class="text-center">
+                  </ion-col>
+               
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+  </div>
+   
 </ion-content>
+
+<ion-footer >
+<ion-toolbar>
+<ion-grid class="bg-dark">
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="6" class="text-center">
+      <ion-button (click)="backClicked()" class="btncolor">
+        <ion-icon name="ellipse-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+</ion-grid>
+</ion-toolbar>
+</ion-footer>

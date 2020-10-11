@@ -7,10 +7,18 @@
             <img src="../../assets/icon/newlogo.png">
           </ion-col>
           <ion-col (click)="naviPage('home/news')" size="12">
-            <ion-label>News</ion-label>
+           <ion-menu-toggle><ion-label>News</ion-label></ion-menu-toggle> 
           </ion-col>
+          <ion-menu-toggle></ion-menu-toggle>
           <ion-col (click)="naviPage('home/teams')" size="12">
-            <ion-label>Teams</ion-label>
+            <ion-menu-toggle><ion-label>Teams</ion-label></ion-menu-toggle>
+          </ion-col>
+          <ion-menu-toggle></ion-menu-toggle>
+          <ion-col (click)="naviPage('home/score')" size="12">
+            <ion-menu-toggle><ion-label>Score</ion-label></ion-menu-toggle>
+          </ion-col>
+          <ion-col (click)="updateData()" size="12">
+            <ion-menu-toggle><ion-label>Sync/Update</ion-label></ion-menu-toggle>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -25,8 +33,6 @@
   <div class="ion-page" id="main-content">
     <ion-header>
       <ion-toolbar color="dark">
-       
-       
         <ion-buttons    slot="end">
           <ion-menu-button ></ion-menu-button>
         </ion-buttons>
