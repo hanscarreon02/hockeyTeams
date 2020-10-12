@@ -27,7 +27,7 @@ isLoading = false;
 
   readScore(){
     this.apiData.getScores().subscribe((data)=> {
-      console.log(data.events);
+      // console.log(data.events);
       // console.log(data.events[0].competitions[0].notes[0].headline);
       this.headLine = data.events[0].competitions[0].notes[0].headline
       this.matchResult = data.events;
@@ -39,7 +39,7 @@ isLoading = false;
 
         }, 1000);
       }
-      console.log("score");
+      // console.log("score");
     })
   }
   backClicked() {

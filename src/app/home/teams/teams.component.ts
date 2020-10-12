@@ -34,8 +34,8 @@ isLoading = false;
   getTeams(){
     this.apiData.getTeams().subscribe((data)=>{
       this.teams =  data.sports[0].leagues[0].teams 
-      console.log(this.teams);
-      console.log(data); // check data in console
+      // console.log(this.teams);
+      // console.log(data); // check data in console
       if(data){
         setTimeout(()=> { this.hideLoader()},1000) // delayed loader hider
       }// if data exist hide the loader

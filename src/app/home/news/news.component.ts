@@ -35,7 +35,7 @@ newsDatas = [];
     // console.log("test")
    this.apiData.getNews().subscribe((data)=> {
      this.newsDatas = data;
-     console.log(data)
+    //  console.log(data)
      if(data){
       setTimeout(()=> { this.hideLoader()},1000)
      }

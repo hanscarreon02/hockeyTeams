@@ -72,7 +72,7 @@ isLoading = false;
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
-    console.log(this.dataTeam[0].team);
+    // console.log(this.dataTeam[0].team);
     this.isLoading = true;
     this.readData();
 
@@ -85,7 +85,7 @@ isLoading = false;
   readData(){
     this.activatedRoute.params.subscribe((params) => {
       this.teamId = params.id;
-      console.log(params.id);
+      // console.log(params.id);
     })
     this.apiData.getTeams().subscribe((data)=>{
       this.dataTeam = data.sports[0].leagues[0].teams.filter((arr)=>{
